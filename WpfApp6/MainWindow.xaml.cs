@@ -30,7 +30,7 @@ namespace WpfApp6
         private Button btn()
         {
             Button img = new(); img.Margin = new Thickness(100,10,10,10);
-            img.Height = 120; img.Width = 150; img.MouseLeave += İmg_MouseLeave;
+            img.Height = 150; img.Width = 170; img.MouseLeave += İmg_MouseLeave;
             img.Click += Button_Click; img.MouseEnter += İmg_MouseEnter;
             img.BorderThickness = new Thickness(2);
             img.Tag = Tags;

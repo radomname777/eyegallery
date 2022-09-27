@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfApp6.view.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6.view"
+        mc:Ignorable="d"
+        Title="Window1" Height="550" MinHeight="450" MinWidth="500" Width="900" MouseLeftButtonDown="OnMouseLeftButtonDown" Background="#FF121111" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid Name="DP">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*" />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <Button Tag="1" BorderThickness="0" HorizontalAlignment="Right" Click="BTN_Click" Name="Nihad"  Width="80" Height="55"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/view/sol.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" >
+                    <Button Tag="4" BorderThickness="0" Click="BTN_Click" Name="Nihad2" HorizontalAlignment="Right"  Width="50" Height="55" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/view/stop_btn.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+
+                    <Button Tag="3" BorderThickness="0" HorizontalAlignment="Left" Click="BTN_Click" Name="Nihad3"  Width="50" Height="55" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/view/start_btn.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="3" >
+                    <Button Tag="2" BorderThickness="0" Click="BTN_Click" Name="Nihad4"  Width="80" Height="55" HorizontalAlignment="Left">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/view/sag.png"/>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <!--<WrapPanel Name="DP">
+
+            <WrapPanel  Grid.Row="1" Height="60" VerticalAlignment="Center" Background="Transparent" >
+
+                <Button Tag="1" BorderThickness="0" HorizontalAlignment="Center" Click="BTN_Click" Name="Nihad"  Width="80" Height="55" Margin="290,0,0,0" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/view/sol.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Tag="4" BorderThickness="0" Click="BTN_Click" Name="Nihad2"  Width="50" Height="55" Margin="10,3,0,0" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/view/stop_btn.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Tag="3" BorderThickness="0" Click="BTN_Click" Name="Nihad3"  Width="50" Height="55" Margin="10,3,0,0" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/view/start_btn.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Tag="2" BorderThickness="0" Click="BTN_Click" Name="Nihad4"  Width="80" Height="55" Margin="10,3,0,0" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/view/sag.png"/>
+                    </Button.Background>
+                </Button>
+            </WrapPanel>
+        </WrapPanel>-->
+
+    </Grid>
+   
+</Window>

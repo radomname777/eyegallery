@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="10.jpg" />
+    <None Remove="view\sag.png" />
+    <None Remove="view\sol.png" />
+    <None Remove="view\start_btn.png" />
+    <None Remove="view\stop_btn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+    <PackageReference Include="Ookii.Dialogs" Version="5.0.1" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="view\sag.png" />
+    <Resource Include="view\sol.png" />
+    <Resource Include="view\start_btn.png" />
+    <Resource Include="view\stop_btn.png" />
+  </ItemGroup>
+
+</Project>

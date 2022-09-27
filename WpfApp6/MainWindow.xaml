@@ -1,0 +1,96 @@
+﻿<Window x:Class="WpfApp6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+       
+        Background="Transparent"
+        Title="MainWindow"   Height="550" Width="900" WindowStyle="None" AllowsTransparency="True" MouseDoubleClick="OnMouseLeftButtonDown">
+        <Grid Name="BG_Color" Background="#CC141414" >
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+            
+        <DockPanel Background="Bisque">
+            <Menu Background="Bisque" VerticalAlignment="Center" Foreground="Black">
+                <MenuItem VerticalAlignment="Center"
+                  Foreground="Black"
+                  Margin="1,2,0,0"
+                  Header="_File" Height="30">
+                    <MenuItem
+                        Tag="OpenF"
+                        Click="MenuItem_Click"
+                  Header="Open"
+                  Icon="{materialDesign:PackIcon Kind=OpenInApp}"></MenuItem>
+                    <MenuItem
+                        Tag="Save"
+                        Click="MenuItem_Click"
+                  Header="Save"
+                  Icon="{materialDesign:PackIcon Kind=ContentSave}"></MenuItem>
+                    <MenuItem
+                        Click="MenuItem_Click"
+                        Tag="SaveA"
+                        Icon="{materialDesign:PackIcon Kind=ContentSaveAll}"
+                        Header="Save As" />
+                    <MenuItem
+                        Tag="E_X"
+                      Click="MenuItem_Click"
+                  Header="Exit"
+                  Icon="{materialDesign:PackIcon Kind=ExitToApp}" />
+                </MenuItem>
+                <MenuItem 
+                    VerticalAlignment="Center"
+                    Height="30"
+                    Margin="0,2,0,0"
+                    Header="_Edit">
+                    <MenuItem
+                        Tag="AddF"
+                        Click="MenuItem_Click"
+                        Header="_Add Folder"
+                        Icon="{materialDesign:PackIcon Kind=Folder}" />
+                    <MenuItem
+                        Tag="Add"
+                        Click="MenuItem_Click"
+                    Header="_Add FIle"
+                    Icon="{materialDesign:PackIcon Kind=File}" />
+
+                </MenuItem>
+                <MenuItem 
+                    VerticalAlignment="Center"
+                    Height="30"
+                    Margin="0,2,0,0"
+                    Header="_View">
+                </MenuItem>
+                <MenuItem 
+                    VerticalAlignment="Center"
+                    Height="30"
+                    Margin="0,2,0,0"
+                    Header="_About">
+                </MenuItem>
+            </Menu>
+            <StackPanel Orientation ="Horizontal"  HorizontalAlignment="Right" Margin="0,0,3,0">
+                <Button Name="Min_size" Click="Btn_Size_Click" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <materialDesign:PackIcon Kind="ImageSizeSelectSmall" Width="30" Height="35" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" />
+                </Button>
+                <Button Name="Full_Size" Click="Btn_Size_Click"  Margin="10,0,0,0" Foreground="#DD000000" Background="{x:Null}" BorderBrush="{x:Null}" >
+                    <materialDesign:PackIcon  Width="30" Height="30"  Kind="ArrowSplitHorizontal" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="#FD000000"/>
+                </Button>
+            </StackPanel>
+
+        </DockPanel>
+
+
+
+        <ScrollViewer  Grid.Row="1" x:Name="MyScrollViewer" VerticalScrollBarVisibility="Hidden">
+            
+            
+            <WrapPanel HorizontalAlignment="Left" Name ="PanelW" MinWidth="0" Width="{Binding ElementName=MyScrollViewer, Path=ViewportWidth}">
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

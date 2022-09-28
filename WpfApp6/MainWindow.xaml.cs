@@ -241,7 +241,7 @@ namespace WpfApp6
             if (sender is ToggleButton btn)
             {
                 if ((bool)btn.IsChecked) { R = 20; G = 20; B = 20; Backgrount_color(false); }
-                else { R = 167; G = 167; B = 167; Backgrount_color(false); }
+                else { R = 167; G = 167; B = 167; Backgrount_color(true) ; }
                 BG_COLORS(A, R, G, B);
             }
         }

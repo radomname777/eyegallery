@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -83,7 +84,19 @@ namespace WpfApp6
             }
             if (FolderName == FileName){ FiFO.CopyImagefolder("Imagecopy", FileName); }
         }
-        
+        private void Backgrount_color(bool boolen)
+        {
+            if (boolen)
+            {
+                Dock_panel_color.Background = new SolidColorBrush(Colors.White);
+                Menu_Back.Background = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                Dock_panel_color.Background = new SolidColorBrush(Colors.Bisque);
+                Menu_Back.Background = new SolidColorBrush(Colors.Bisque);
+            }
+        }
         private void Check(string FileName)
         {
             bool exists = System.IO.Directory.Exists(FileName);
@@ -191,6 +204,7 @@ namespace WpfApp6
             }
             
         }
+        byte A=200, R = 167, G = 167, B = 167;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn)
@@ -203,22 +217,33 @@ namespace WpfApp6
             }
         }
         private void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>DragMove();
-        private void BG_COLORS(bool var)
+
+
+        private void BG_COLORS(byte A,byte R, byte G, byte B)
         {
-            if (var) BG_Color.Background = new SolidColorBrush(Color.FromArgb(200, 20, 20, 20));
-            else BG_Color.Background = new SolidColorBrush(Color.FromArgb(250,20,20,20));
-         
+             BG_Color.Background = new SolidColorBrush(Color.FromArgb(A, B, G,B));
         }
         private void Btn_Size_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.Name == "Min_size")
             {
                 WindowState = WindowState.Normal;
-                BG_COLORS(true);
+                A = 200;
+                BG_COLORS(A,R,G,B);
                 return;
             }
             WindowState = WindowState.Maximized;
-            BG_COLORS(false);
+            A = 250;
+            BG_COLORS(A,R, G, B);
+        }
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is ToggleButton btn)
+            {
+                if ((bool)btn.IsChecked) { R = 20; G = 20; B = 20; Backgrount_color(false); }
+                else { R = 167; G = 167; B = 167; Backgrount_color(false); }
+                BG_COLORS(A, R, G, B);
+            }
         }
     }
 }
